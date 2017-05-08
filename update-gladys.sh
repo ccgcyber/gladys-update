@@ -18,8 +18,8 @@ cp -ar /home/pi/gladys/node_modules/gladys/api/hooks/. $TMP_HOOK_FOLDER
 # We copy the cache folder of the old gladys
 cp -ar /home/pi/gladys/node_modules/gladys/cache/. $TMP_CACHE_FOLDER
 
-# download update
-wget https://s3-eu-west-1.amazonaws.com/gladys-build/gladys-v$GLADYS_VERSION-Linux-armv6l.tar.gz
+# download update (-N allow to don't retrieve file unless newer than local)
+wget -N https://s3-eu-west-1.amazonaws.com/gladys-build/gladys-v$GLADYS_VERSION-Linux-armv6l.tar.gz
 
 # stop gladys
 pm2 stop --silent gladys
