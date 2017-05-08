@@ -28,7 +28,10 @@ pm2 stop --silent gladys
 rm -rf $GLADYS_FOLDER
 
 #  install gladys 
-tar zxvf gladys-v$GLADYS_VERSION-Linux-armv6l.tar.gz gladys/
+tar zxvf gladys-v$GLADYS_VERSION-Linux-armv6l.tar.gz
+
+# rename folder
+mv gladys-v$GLADYS_VERSION-Linux-armv6l gladys
 
 # move back hooks & cache
 mv $TMP_HOOK_FOLDER $GLADYS_FOLDER/api/hooks
