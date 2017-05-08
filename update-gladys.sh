@@ -42,4 +42,4 @@ node init.js
 grunt buildProd
 
 # restart gladys
-pm2 start gladys
+pm2 start /home/pi/gladys/app.js --name gladys
