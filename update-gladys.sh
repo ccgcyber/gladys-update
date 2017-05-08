@@ -30,9 +30,6 @@ rm -rf $GLADYS_FOLDER
 #  install gladys 
 tar zxvf gladys-v$GLADYS_VERSION-Linux-armv6l.tar.gz
 
-# rename folder
-mv gladys-v$GLADYS_VERSION-Linux-armv6l gladys
-
 # move back hooks & cache
 mv $TMP_HOOK_FOLDER $GLADYS_FOLDER/api/hooks
 mv $TMP_CACHE_FOLDER $GLADYS_FOLDER/cache
