@@ -35,8 +35,8 @@ rm -rf $GLADYS_FOLDER
 tar zxvf gladys-v$GLADYS_VERSION-Linux-armv6l.tar.gz
 
 # move back hooks & cache
-mv $TMP_HOOK_FOLDER $GLADYS_FOLDER/api/hooks
-mv $TMP_CACHE_FOLDER $GLADYS_FOLDER/cache
+cp -ar $TMP_HOOK_FOLDER/. $GLADYS_FOLDER/api/hooks
+cp -ar $TMP_CACHE_FOLDER/. $GLADYS_FOLDER/cache
 
 # init 
 cd $GLADYS_FOLDER
