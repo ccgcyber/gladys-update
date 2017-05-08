@@ -12,6 +12,10 @@ rm -rf $TMP_HOOK_FOLDER
 # Cleaning Gladys cache folder
 rm -rf $TMP_CACHE_FOLDER
 
+# Creating temp folder
+mkdir $TMP_HOOK_FOLDER
+mkdir $TMP_CACHE_FOLDER
+
 # We copy the hooks repository of the old folder
 cp -ar /home/pi/gladys/node_modules/gladys/api/hooks/. $TMP_HOOK_FOLDER
 
