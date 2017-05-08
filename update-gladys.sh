@@ -19,7 +19,7 @@ cp -ar /home/pi/gladys/node_modules/gladys/api/hooks/. $TMP_HOOK_FOLDER
 cp -ar /home/pi/gladys/node_modules/gladys/cache/. $TMP_CACHE_FOLDER
 
 # download update
-wget https://s3-eu-west-1.amazonaws.com/gladys-build/gladys-$GLADYS_VERSION-Linux-armv6l.tar.gz
+wget https://s3-eu-west-1.amazonaws.com/gladys-build/gladys-v$GLADYS_VERSION-Linux-armv6l.tar.gz
 
 # stop gladys
 pm2 stop --silent gladys
@@ -28,7 +28,7 @@ pm2 stop --silent gladys
 rm -rf $GLADYS_FOLDER
 
 #  install gladys 
-tar zxvf gladys-$GLADYS_VERSION-Linux-armv6l.tar.gz gladys/
+tar zxvf gladys-v$GLADYS_VERSION-Linux-armv6l.tar.gz gladys/
 
 # move back hooks & cache
 mv $TMP_HOOK_FOLDER $GLADYS_FOLDER/api/hooks
