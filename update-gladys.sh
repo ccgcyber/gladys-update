@@ -1,6 +1,6 @@
 #!/bin/bash
 
-GLADYS_VERSION=3.5.2
+GLADYS_VERSION=3.6.1
 
 TMP_HOOK_FOLDER="/tmp/gladys_hooks"
 TMP_CACHE_FOLDER="/tmp/gladys_cache"
