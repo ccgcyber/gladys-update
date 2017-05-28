@@ -20,7 +20,7 @@ mkdir $TMP_CACHE_FOLDER
 cp -ar $GLADYS_FOLDER/api/hooks/. $TMP_HOOK_FOLDER
 
 # We copy the cache folder of the old gladys
-cp -ar $GLADYS_FOLDERs/cache/. $TMP_CACHE_FOLDER
+cp -ar $GLADYS_FOLDER/cache/. $TMP_CACHE_FOLDER
 
 # download update (-N allow to don't retrieve file unless newer than local)
 wget -N https://s3-eu-west-1.amazonaws.com/gladys-build/gladys-v$GLADYS_VERSION-Linux-armv6l.tar.gz
