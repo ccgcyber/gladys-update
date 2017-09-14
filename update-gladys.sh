@@ -1,6 +1,6 @@
 #!/bin/bash
 
-GLADYS_VERSION=3.6.1
+GLADYS_VERSION=3.6.2
 
 TMP_HOOK_FOLDER="/tmp/gladys_hooks"
 TMP_CACHE_FOLDER="/tmp/gladys_cache"
@@ -23,7 +23,7 @@ cp -ar $GLADYS_FOLDER/api/hooks/. $TMP_HOOK_FOLDER
 cp -ar $GLADYS_FOLDER/cache/. $TMP_CACHE_FOLDER
 
 # download update (-N allow to don't retrieve file unless newer than local)
-wget -N https://s3-eu-west-1.amazonaws.com/gladys-build/gladys-v$GLADYS_VERSION-Linux-armv6l.tar.gz
+wget -N https://github.com/GladysProject/Gladys/releases/download/v3.6.2/gladys-v3.6.2-Linux-armv6l.tar.gz
 
 # stop gladys
 pm2 stop --silent gladys
