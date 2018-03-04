@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "No update at the moment, your version is the latest one !"
+exit 0
+
 GLADYS_VERSION=3.7.8
 
 TMP_HOOK_FOLDER="/tmp/gladys_hooks"
