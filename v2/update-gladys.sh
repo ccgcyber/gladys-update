@@ -1,9 +1,6 @@
 #!/bin/bash
 
-echo "No update at the moment, your version is the latest one !"
-exit 0
-
-GLADYS_VERSION=3.7.8
+GLADYS_VERSION=3.9.1
 
 TMP_HOOK_FOLDER="/tmp/gladys_hooks"
 TMP_CACHE_FOLDER="/tmp/gladys_cache"
@@ -26,7 +23,7 @@ cp -ar $GLADYS_FOLDER/api/hooks/. $TMP_HOOK_FOLDER
 cp -ar $GLADYS_FOLDER/cache/. $TMP_CACHE_FOLDER
 
 # download update (-N allow to don't retrieve file unless newer than local)
-wget -N https://github.com/GladysProject/Gladys/releases/download/v3.7.8/gladys-v3.7.8-Linux-armv6l.tar.gz
+wget -N https://github.com/GladysProject/Gladys/releases/download/v3.9.1/gladys-v3.9.1-Linux-armv6l.tar.gz
 
 # stop gladys
 pm2 stop --silent gladys
@@ -42,11 +39,8 @@ cp -ar $TMP_HOOK_FOLDER/. $GLADYS_FOLDER/api/hooks
 cp -ar $TMP_CACHE_FOLDER/. $GLADYS_FOLDER/cache
 
 # init 
-cd $GLADYS_FOLDER
-node init.js
-
-# build assets
-grunt buildProd
+#cd $GLADYS_FOLDER
+#node init.js
 
 # restart gladys
 pm2 start /home/pi/gladys/app.js --name gladys
