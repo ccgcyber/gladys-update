@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 GLADYS_VERSION=3.9.1
 
@@ -22,8 +23,11 @@ cp -ar $GLADYS_FOLDER/api/hooks/. $TMP_HOOK_FOLDER
 # We copy the cache folder of the old gladys
 cp -ar $GLADYS_FOLDER/cache/. $TMP_CACHE_FOLDER
 
-# download update (-N allow to don't retrieve file unless newer than local)
-wget -N https://github.com/GladysProject/Gladys/releases/download/v3.9.1/gladys-v3.9.1-Linux-armv6l.tar.gz
+# We clean the installation file if it already exists
+rm gladys-v3.9.1-Linux-armv6l.tar.gz || true
+
+# download update
+wget https://mirror-fr-2.gladysproject.com/upgrades/gladys-v3.9.1-Linux-armv6l.tar.gz
 
 # stop gladys
 pm2 stop --silent gladys
