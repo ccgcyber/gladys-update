@@ -2,7 +2,7 @@
 set -e
 
 GLADYS_VERSION=3.10.2
-EXPECTED_CHECKSUM="8341545432806a4da507182a17162fd5  gladys-v3.10.2-Linux-armv6l.tar.gz"
+EXPECTED_CHECKSUM="1d6e45d626f077f8e97c842dec91493d  gladys-v3.10.2-Linux-armv6l.tar.gz"
 
 TMP_HOOK_FOLDER="/tmp/gladys_hooks"
 TMP_CACHE_FOLDER="/tmp/gladys_cache"
