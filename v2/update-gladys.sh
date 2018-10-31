@@ -1,7 +1,8 @@
 #!/bin/bash
 set -e
 
-GLADYS_VERSION=3.9.1
+GLADYS_VERSION=3.10.3
+EXPECTED_CHECKSUM="3c715323ad7e962dce0062af16547aa5  gladys-v3.10.3-Linux-armv6l.tar.gz"
 
 TMP_HOOK_FOLDER="/tmp/gladys_hooks"
 TMP_CACHE_FOLDER="/tmp/gladys_cache"
@@ -24,10 +25,19 @@ cp -ar $GLADYS_FOLDER/api/hooks/. $TMP_HOOK_FOLDER
 cp -ar $GLADYS_FOLDER/cache/. $TMP_CACHE_FOLDER
 
 # We clean the installation file if it already exists
-rm gladys-v3.9.1-Linux-armv6l.tar.gz || true
+rm gladys-v3.10.3-Linux-armv6l.tar.gz || true
 
 # download update
-wget https://mirror-fr-2.gladysproject.com/upgrades/gladys-v3.9.1-Linux-armv6l.tar.gz
+wget https://mirror-fr-2.gladysproject.com/upgrades/gladys-v3.10.3-Linux-armv6l.tar.gz
+
+CHECKSUM="$(md5sum gladys-v3.10.3-Linux-armv6l.tar.gz)"
+
+# check checksum
+if [ "$CHECKSUM" != "$EXPECTED_CHECKSUM" ]
+then
+ echo "Wrong file checksum. Exiting" 
+ exit 1
+fi
 
 # stop gladys
 pm2 stop --silent gladys
