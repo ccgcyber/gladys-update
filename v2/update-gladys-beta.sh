@@ -40,10 +40,10 @@ then
 fi
 
 # stop gladys
-pm2 stop --silent gladys
+pm2 stop --silent gladys || true
 
 # Delete current gladys install
-rm -rf $GLADYS_FOLDER
+rm -rf $GLADYS_FOLDER || true
 
 #  install gladys 
 tar zxvf gladys-v$GLADYS_VERSION-Linux-armv6l.tar.gz
